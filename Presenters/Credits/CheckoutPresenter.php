@@ -39,6 +39,7 @@ class CheckoutPresenter extends ActionPresenter
 
         $this->AddAction('executePayPalPayment', 'ExecutePayPalPayment');
         $this->AddAction('createPayPalPayment', 'CreatePayPalPayment');
+        $this->AddAction('createStripeSession', 'CreateStripeSession');
         $this->AddAction('executeStripePayment', 'ExecuteStripePayment');
     }
 
@@ -89,6 +90,24 @@ class CheckoutPresenter extends ActionPresenter
         $this->page->SetPayPalPayment($payment);
     }
 
+    public function CreateStripeSession()
+    {
+        $gateway = $this->paymentRepository->GetStripeGateway();
+        $baseUrl = new Url(Configuration::Instance()->GetScriptUrl());
+        $successUrl = $baseUrl->Copy()->Add(Pages::CHECKOUT);
+        $cancelUrl = $baseUrl->Copy()->Add(Pages::CHECKOUT);
+
+        /** @var CreditCartSession $cart */
+        $cart = ServiceLocator::GetServer()->GetSession(SessionKeys::CREDIT_CART);
+        $session = $gateway->CreateCheckoutSession($cart, $successUrl->ToString(), $cancelUrl->ToString(), ServiceLocator::GetServer()->GetUserSession()->Email);
+
+        if ($session !== null) {
+            $this->page->SetStripeSessionId($session->id);
+        } else {
+            $this->page->SetStripeSessionId(null);
+        }
+    }
+
     public function ExecutePayPalPayment()
     {
         $gateway = $this->paymentRepository->GetPayPalGateway();
@@ -109,17 +128,16 @@ class CheckoutPresenter extends ActionPresenter
 
     public function ExecuteStripePayment()
     {
-        $token = $this->page->GetStripeToken();
-        $userSession = ServiceLocator::GetServer()->GetUserSession();
+        $sessionId = $this->page->GetStripeSessionId();
 
         $gateway = $this->paymentRepository->GetStripeGateway();
 
         /** @var CreditCartSession $cart  */
         $cart = ServiceLocator::GetServer()->GetSession(SessionKeys::CREDIT_CART);
-        $result = $gateway->Charge($cart, $userSession->Email, $token, $this->paymentLogger);
+        $result = $gateway->CompleteCheckoutSession($sessionId, $this->paymentLogger);
 
         if ($result == true) {
-            $user = $this->userRepository->LoadById($userSession->UserId);
+            $user = $this->userRepository->LoadById(ServiceLocator::GetServer()->GetUserSession()->UserId);
             $user->AddCredits($cart->Quantity, Resources::GetInstance()->GetString('NoteCreditsPurchased'));
             $this->userRepository->Update($user);
             ServiceLocator::GetServer()->SetSession(SessionKeys::CREDIT_CART, null);

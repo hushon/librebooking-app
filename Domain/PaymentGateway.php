@@ -558,6 +558,42 @@ class StripeGateway implements IPaymentGateway
 
     /**
      * @param CreditCartSession $cart
+     * @param string $successUrl
+     * @param string $cancelUrl
+     * @param string $email
+     * @return \Stripe\Checkout\Session|null
+     */
+    public function CreateCheckoutSession(CreditCartSession $cart, string $successUrl, string $cancelUrl, string $email)
+    {
+        try {
+            \Stripe\Stripe::setApiKey($this->SecretKey());
+
+            $session = \Stripe\Checkout\Session::create([
+                'payment_method_types' => ['card'],
+                'customer_email' => $email,
+                'line_items' => [[
+                    'price_data' => [
+                        'currency' => strtolower($cart->Currency),
+                        'product_data' => ['name' => Resources::GetInstance()->GetString('Credits')],
+                        'unit_amount' => (new \Booked\Currency($cart->Currency))->ToStripe($cart->CostPerCredit()),
+                    ],
+                    'quantity' => $cart->Quantity,
+                ]],
+                'mode' => 'payment',
+                'success_url' => $successUrl . '&session_id={CHECKOUT_SESSION_ID}',
+                'cancel_url'  => $cancelUrl,
+            ]);
+
+            return $session;
+        } catch (Exception $ex) {
+            Log::Error('Stripe - error creating checkout session. %s', $ex);
+        }
+
+        return null;
+    }
+
+    /**
+     * @param CreditCartSession $cart
      * @param string $email
      * @param string $token
      * @param IPaymentTransactionLogger $logger
@@ -627,6 +663,47 @@ class StripeGateway implements IPaymentGateway
             Log::Error('Stripe - error. %s', $ex);
         } catch (Exception $ex) {
             Log::Error('Stripe - internal error. %s', $ex);
+        }
+
+        return false;
+    }
+
+    /**
+     * @param string $sessionId
+     * @param IPaymentTransactionLogger $logger
+     * @return bool
+     */
+    public function CompleteCheckoutSession(string $sessionId, IPaymentTransactionLogger $logger)
+    {
+        try {
+            \Stripe\Stripe::setApiKey($this->SecretKey());
+
+            $session = \Stripe\Checkout\Session::retrieve($sessionId, ['expand' => ['payment_intent']]);
+            $intent = $session->payment_intent;
+
+            if ($intent) {
+                $currency = new \Booked\Currency(strtoupper($intent->currency));
+                $chargeId = count($intent->charges->data) > 0 ? $intent->charges->data[0]->id : null;
+                $logger->LogPayment(
+                    ServiceLocator::GetServer()->GetUserSession()->UserId,
+                    $intent->status,
+                    $chargeId,
+                    $intent->id,
+                    $currency->FromStripe($intent->amount_received),
+                    0,
+                    strtoupper($intent->currency),
+                    null,
+                    null,
+                    Date::Now(),
+                    $intent->created,
+                    $this->GetGatewayType(),
+                    json_encode($session)
+                );
+
+                return $intent->status == 'succeeded';
+            }
+        } catch (Exception $ex) {
+            Log::Error('Stripe - complete checkout session error. %s', $ex);
         }
 
         return false;
