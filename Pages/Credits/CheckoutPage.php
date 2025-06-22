@@ -54,6 +54,10 @@ interface ICheckoutPage extends IActionPage
      */
     public function GetStripeToken();
 
+    public function GetStripeSessionId();
+
+    public function SetStripeSessionId($sessionId);
+
     /**
      * @param bool $result
      */
@@ -150,6 +154,16 @@ class CheckoutPage extends ActionPage implements ICheckoutPage
     public function GetStripeToken()
     {
         return $this->GetForm(FormKeys::STRIPE_TOKEN);
+    }
+
+    public function GetStripeSessionId()
+    {
+        return $this->GetQuerystring('session_id');
+    }
+
+    public function SetStripeSessionId($sessionId)
+    {
+        $this->SetJson(['id' => $sessionId]);
     }
 
     public function SetStripeResult($result)

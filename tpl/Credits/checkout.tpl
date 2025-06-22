@@ -9,7 +9,7 @@
 			<script
 				src="https://www.paypal.com/sdk/js?client-id={$PayPalClientId}&intent=capture&currency={$Currency}&commit=true&disable-funding=credit">
 			</script>
-			<script src="https://checkout.stripe.com/checkout.js"></script>
+                        <script src="https://js.stripe.com/v3/"></script>
 
 			<div id="checkoutPage">
 
@@ -154,48 +154,45 @@
 
 						{/if}
 
-						{if $StripeEnabled}
+                                                {if $StripeEnabled}
 
-							var executeStripePaymentUrl = '{$smarty.server.SCRIPT_NAME}?action=executeStripePayment';
-							var handler = StripeCheckout.configure({
-								key: '{$StripePublishableKey}',
-								image: 'https://stripe.com/img/documentation/checkout/marketplace.png',
-								zipCode: true,
-								locale: 'auto',
-								currency: '{$Currency}',
-								email: '{$Email}',
-								token: function(token) {
-									var data = {
-										CSRF_TOKEN: $('#csrf_token').val(),
-										STRIPE_TOKEN: token.id
-									};
+                                                        const stripe = Stripe('{$StripePublishableKey}');
+                                                        document.getElementById('stripe-button').addEventListener('click', function () {
+                                                                const fd = new FormData();
+                                                                fd.append('CSRF_TOKEN', $('#csrf_token').val());
+                                                                fetch('{$smarty.server.SCRIPT_NAME}?action=createStripeSession', {
+                                                                        method: 'POST',
+                                                                        body: fd,
+                                                                        credentials: 'include'
+                                                                })
+                                                                .then(res => res.json())
+                                                                .then(data => stripe.redirectToCheckout({ sessionId: data.id }));
+                                                        });
 
-									$.post(executeStripePaymentUrl, data, function(d) {
-										$('#cart').addClass('d-none');
+                                                        const sid = '{$StripeSessionId}';
+                                                        if (sid) {
+                                                                const fd = new FormData();
+                                                                fd.append('CSRF_TOKEN', $('#csrf_token').val());
+                                                                fd.append('session_id', sid);
+                                                                fetch('{$smarty.server.SCRIPT_NAME}?action=executeStripePayment', {
+                                                                        method: 'POST',
+                                                                        body: fd,
+                                                                        credentials: 'include'
+                                                                })
+                                                                .then(res => res.json())
+                                                                .then(function(d) {
+                                                                        $('#cart').addClass('d-none');
+                                                                        if (d.result != true) {
+                                                                                $('#error').removeClass('d-none');
+                                                                        } else {
+                                                                                $('#success').removeClass('d-none');
+                                                                        }
+                                                                });
+                                                        }
 
-										if (d.result != true) {
-											$('#error').removeClass('d-none');
-										} else {
-											$('#success').removeClass('d-none');
-										}
-									});
-								}
-							});
-
-							document.getElementById('stripe-button').addEventListener('click', function(e) {
-								handler.open({
-									name: '{translate key=BuyMoreCredits}', description: '{$Total}', amount: {$TotalUnformatted * 100}
-								});
-								e.preventDefault();
-							});
-
-							window.addEventListener('popstate', function() {
-								handler.close();
-							});
-
-						{/if}
-					});
-				</script>
+                                                {/if}
+                                        });
+                                </script>
 
 			</div>
 		</div>

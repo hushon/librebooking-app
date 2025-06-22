@@ -77,6 +77,25 @@ class CheckoutPresenterTest extends TestBase
         $this->assertEquals('/checkout.php?paypalaction=cancel', $gateway->_CancelUrl);
     }
 
+    public function testCreatesStripeSession()
+    {
+        $creditCartSession = new CreditCartSession(5, 10, 'USD', $this->fakeUser->UserId);
+        $this->fakeServer->SetSession(SessionKeys::CREDIT_CART, $creditCartSession);
+
+        $gateway = new FakeStripeGateway();
+        $session = new stdClass();
+        $session->id = 'sess_123';
+        $gateway->_Session = $session;
+        $this->paymentRepository->_Stripe = $gateway;
+
+        $this->presenter->CreateStripeSession();
+
+        $this->assertEquals($creditCartSession, $gateway->_CreateSessionCart);
+        $this->assertEquals('/checkout.php', $gateway->_CancelUrl);
+        $this->assertEquals('/checkout.php', strtok($gateway->_SuccessUrl, '?'));  // base url check
+        $this->assertEquals($session->id, $this->page->_StripeSessionId);
+    }
+
     public function testExecutesPayPalPayment()
     {
         $creditCartSession = new CreditCartSession(5, 10, 'USD', $this->fakeUser->UserId);
@@ -111,16 +130,15 @@ class CheckoutPresenterTest extends TestBase
 
         $this->userRepository->_User->WithCredits(10);
 
-        $this->page->_StripeToken = '123';
+        $this->page->_StripeSessionId = 'sess_123';
         $gateway = new FakeStripeGateway();
         $this->paymentRepository->_Stripe = $gateway;
-        $gateway->_ChargeResponse = true;
+        $gateway->_CompleteResult = true;
 
         $this->presenter->ExecuteStripePayment();
 
         $this->assertEquals(true, $this->page->_StripePaymentResult);
-        $this->assertEquals('123', $gateway->_Token);
-        $this->assertEquals($this->fakeUser->Email, $gateway->_Email);
+        $this->assertEquals('sess_123', $gateway->_CompleteSessionId);
         $this->assertNull($this->fakeServer->GetSession(SessionKeys::CREDIT_CART));
         $this->assertEquals(15, $this->userRepository->_UpdatedUser->GetCurrentCredits());
     }
@@ -143,6 +161,7 @@ class FakeCheckoutPage extends CheckoutPage
     public $_PayerId;
     public $_StripeToken;
     public $_StripePaymentResult;
+    public $_StripeSessionId;
 
     public function GetCreditCount()
     {
@@ -192,6 +211,16 @@ class FakeCheckoutPage extends CheckoutPage
     public function GetStripeToken()
     {
         return $this->_StripeToken;
+    }
+
+    public function GetStripeSessionId()
+    {
+        return $this->_StripeSessionId;
+    }
+
+    public function SetStripeSessionId($sessionId)
+    {
+        $this->_StripeSessionId = $sessionId;
     }
 
     public function SetStripeResult($result)
