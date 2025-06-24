@@ -306,7 +306,9 @@ class LoginPresenter
             $baseUrl     = Configuration::Instance()->GetSectionKey(ConfigSection::AUTHENTICATION, ConfigKeys::KEYCLOAK_URL);
             $realm       = Configuration::Instance()->GetSectionKey(ConfigSection::AUTHENTICATION, ConfigKeys::KEYCLOAK_REALM);
             $clientId    = Configuration::Instance()->GetSectionKey(ConfigSection::AUTHENTICATION, ConfigKeys::KEYCLOAK_CLIENT_ID);
-            $redirectUri = rtrim(Configuration::Instance()->GetScriptUrl(), 'Web/') . Configuration::Instance()->GetSectionKey(ConfigSection::AUTHENTICATION, ConfigKeys::KEYCLOAK_REDIRECT_URI);
+            $scriptUrl = Configuration::Instance()->GetScriptUrl();
+            $scriptUrl = preg_replace('#/Web/?$#', '', $scriptUrl);
+            $redirectUri = $scriptUrl . Configuration::Instance()->GetSectionKey(ConfigSection::AUTHENTICATION, ConfigKeys::KEYCLOAK_REDIRECT_URI);
 
             // Construct the Keycloak authentication URL
             $keycloakUrl = rtrim($baseUrl, '/')
@@ -327,7 +329,9 @@ class LoginPresenter
             // Retrieve Oauth2 configuration values
             $baseUrl     = Configuration::Instance()->GetSectionKey(ConfigSection::AUTHENTICATION, ConfigKeys::OAUTH2_URL_AUTHORIZE);
             $clientId    = Configuration::Instance()->GetSectionKey(ConfigSection::AUTHENTICATION, ConfigKeys::OAUTH2_CLIENT_ID);
-            $redirectUri = rtrim(Configuration::Instance()->GetScriptUrl(), 'Web/') . Configuration::Instance()->GetSectionKey(ConfigSection::AUTHENTICATION, ConfigKeys::OAUTH2_REDIRECT_URI);
+            $scriptUrl = Configuration::Instance()->GetScriptUrl();
+            $scriptUrl = preg_replace('#/Web/?$#', '', $scriptUrl);
+            $redirectUri = $scriptUrl . Configuration::Instance()->GetSectionKey(ConfigSection::AUTHENTICATION, ConfigKeys::OAUTH2_REDIRECT_URI);
 
             // Construct the Oauth2 authentication URL
             $Oauth2Url = $baseUrl
