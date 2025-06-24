@@ -236,6 +236,13 @@ class ExternalAuthLoginPresenter
     private function ProcessOauth2SingleSignOn()
     {
         $code = $_GET['code'];
+        $state = $_GET['state'] ?? '';
+        $expectedState = ServiceLocator::GetServer()->GetSession(SessionKeys::OAUTH2_STATE);
+        if (empty($state) || $state !== $expectedState) {
+            $this->page->ShowError(['Invalid OAuth2 state parameter.']);
+            return;
+        }
+        ServiceLocator::GetServer()->SetSession(SessionKeys::OAUTH2_STATE, null);
 
         $oauth2UrlToken  = Configuration::Instance()->GetSectionKey(ConfigSection::AUTHENTICATION, ConfigKeys::OAUTH2_URL_TOKEN);
         $oauth2UrlUserinfo = Configuration::Instance()->GetSectionKey(ConfigSection::AUTHENTICATION, ConfigKeys::OAUTH2_URL_USERINFO);

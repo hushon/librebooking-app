@@ -333,12 +333,16 @@ class LoginPresenter
             $scriptUrl = preg_replace('#/Web/?$#', '', $scriptUrl);
             $redirectUri = $scriptUrl . Configuration::Instance()->GetSectionKey(ConfigSection::AUTHENTICATION, ConfigKeys::OAUTH2_REDIRECT_URI);
 
+            $state = bin2hex(random_bytes(16));
+            ServiceLocator::GetServer()->SetSession(SessionKeys::OAUTH2_STATE, $state);
+
             // Construct the Oauth2 authentication URL
             $Oauth2Url = $baseUrl
                 . '?client_id=' . urlencode($clientId)
                 . '&redirect_uri=' . urlencode($redirectUri)
                 . '&response_type=code'
-                . '&scope=' . urlencode('openid email profile');
+                . '&scope=' . urlencode('openid email profile')
+                . '&state=' . urlencode($state);
 
             return $Oauth2Url;
         }
