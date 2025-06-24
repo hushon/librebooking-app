@@ -168,7 +168,9 @@ class ExternalAuthLoginPresenter
         $realm        = Configuration::Instance()->GetSectionKey(ConfigSection::AUTHENTICATION, ConfigKeys::KEYCLOAK_REALM);
         $clientId     = Configuration::Instance()->GetSectionKey(ConfigSection::AUTHENTICATION, ConfigKeys::KEYCLOAK_CLIENT_ID);
         $clientSecret = Configuration::Instance()->GetSectionKey(ConfigSection::AUTHENTICATION, ConfigKeys::KEYCLOAK_CLIENT_SECRET);
-        $redirectUri = rtrim(Configuration::Instance()->GetScriptUrl(), 'Web/') . Configuration::Instance()->GetSectionKey(ConfigSection::AUTHENTICATION, ConfigKeys::KEYCLOAK_REDIRECT_URI);
+        $scriptUrl = Configuration::Instance()->GetScriptUrl();
+        $scriptUrl = preg_replace('#/Web/?$#', '', $scriptUrl);
+        $redirectUri = $scriptUrl . Configuration::Instance()->GetSectionKey(ConfigSection::AUTHENTICATION, ConfigKeys::KEYCLOAK_REDIRECT_URI);
 
         $tokenEndpoint = rtrim($keycloakUrl, '/') . '/realms/' . urlencode($realm) . '/protocol/openid-connect/token';
 
@@ -234,12 +236,21 @@ class ExternalAuthLoginPresenter
     private function ProcessOauth2SingleSignOn()
     {
         $code = $_GET['code'];
+        $state = $_GET['state'] ?? '';
+        $expectedState = ServiceLocator::GetServer()->GetSession(SessionKeys::OAUTH2_STATE);
+        if (empty($state) || $state !== $expectedState) {
+            $this->page->ShowError(['Invalid OAuth2 state parameter.']);
+            return;
+        }
+        ServiceLocator::GetServer()->SetSession(SessionKeys::OAUTH2_STATE, null);
 
         $oauth2UrlToken  = Configuration::Instance()->GetSectionKey(ConfigSection::AUTHENTICATION, ConfigKeys::OAUTH2_URL_TOKEN);
         $oauth2UrlUserinfo = Configuration::Instance()->GetSectionKey(ConfigSection::AUTHENTICATION, ConfigKeys::OAUTH2_URL_USERINFO);
         $clientId     = Configuration::Instance()->GetSectionKey(ConfigSection::AUTHENTICATION, ConfigKeys::OAUTH2_CLIENT_ID);
         $clientSecret = Configuration::Instance()->GetSectionKey(ConfigSection::AUTHENTICATION, ConfigKeys::OAUTH2_CLIENT_SECRET);
-        $redirectUri = rtrim(Configuration::Instance()->GetScriptUrl(), 'Web/') . Configuration::Instance()->GetSectionKey(ConfigSection::AUTHENTICATION, ConfigKeys::OAUTH2_REDIRECT_URI);
+        $scriptUrl = Configuration::Instance()->GetScriptUrl();
+        $scriptUrl = preg_replace('#/Web/?$#', '', $scriptUrl);
+        $redirectUri = $scriptUrl . Configuration::Instance()->GetSectionKey(ConfigSection::AUTHENTICATION, ConfigKeys::OAUTH2_REDIRECT_URI);
 
         // Prepare the POST data for the token request.
         $postData = [

@@ -306,7 +306,9 @@ class LoginPresenter
             $baseUrl     = Configuration::Instance()->GetSectionKey(ConfigSection::AUTHENTICATION, ConfigKeys::KEYCLOAK_URL);
             $realm       = Configuration::Instance()->GetSectionKey(ConfigSection::AUTHENTICATION, ConfigKeys::KEYCLOAK_REALM);
             $clientId    = Configuration::Instance()->GetSectionKey(ConfigSection::AUTHENTICATION, ConfigKeys::KEYCLOAK_CLIENT_ID);
-            $redirectUri = rtrim(Configuration::Instance()->GetScriptUrl(), 'Web/') . Configuration::Instance()->GetSectionKey(ConfigSection::AUTHENTICATION, ConfigKeys::KEYCLOAK_REDIRECT_URI);
+            $scriptUrl = Configuration::Instance()->GetScriptUrl();
+            $scriptUrl = preg_replace('#/Web/?$#', '', $scriptUrl);
+            $redirectUri = $scriptUrl . Configuration::Instance()->GetSectionKey(ConfigSection::AUTHENTICATION, ConfigKeys::KEYCLOAK_REDIRECT_URI);
 
             // Construct the Keycloak authentication URL
             $keycloakUrl = rtrim($baseUrl, '/')
@@ -327,14 +329,20 @@ class LoginPresenter
             // Retrieve Oauth2 configuration values
             $baseUrl     = Configuration::Instance()->GetSectionKey(ConfigSection::AUTHENTICATION, ConfigKeys::OAUTH2_URL_AUTHORIZE);
             $clientId    = Configuration::Instance()->GetSectionKey(ConfigSection::AUTHENTICATION, ConfigKeys::OAUTH2_CLIENT_ID);
-            $redirectUri = rtrim(Configuration::Instance()->GetScriptUrl(), 'Web/') . Configuration::Instance()->GetSectionKey(ConfigSection::AUTHENTICATION, ConfigKeys::OAUTH2_REDIRECT_URI);
+            $scriptUrl = Configuration::Instance()->GetScriptUrl();
+            $scriptUrl = preg_replace('#/Web/?$#', '', $scriptUrl);
+            $redirectUri = $scriptUrl . Configuration::Instance()->GetSectionKey(ConfigSection::AUTHENTICATION, ConfigKeys::OAUTH2_REDIRECT_URI);
+
+            $state = bin2hex(random_bytes(16));
+            ServiceLocator::GetServer()->SetSession(SessionKeys::OAUTH2_STATE, $state);
 
             // Construct the Oauth2 authentication URL
             $Oauth2Url = $baseUrl
                 . '?client_id=' . urlencode($clientId)
                 . '&redirect_uri=' . urlencode($redirectUri)
                 . '&response_type=code'
-                . '&scope=' . urlencode('openid email profile');
+                . '&scope=' . urlencode('openid email profile')
+                . '&state=' . urlencode($state);
 
             return $Oauth2Url;
         }
