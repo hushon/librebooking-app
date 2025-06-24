@@ -58,7 +58,7 @@ RUN set -ex; \
     curl \
       --fail \
       --silent \
-      --location https://api.github.com/repos/librebooking/app/tarball/${APP_GH_REF} \
+      --location https://api.github.com/repos/hushon/librebooking-app/tarball/${APP_GH_REF} \
     | tar --extract --gzip --directory=/var/www/html --strip-components=1; \
     if [ -f /var/www/html/composer.json ]; then \
       composer install; \
