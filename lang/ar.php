@@ -654,6 +654,8 @@ class ar extends en_us
         $strings['TryAgain'] = 'محاولة مرة اخرى ';
         $strings['PurchaseFailed'] = 'لقد واجهتنا مشكلة في معالجة دفعتك.';
         $strings['NoteCreditsPurchased'] = 'شراء الاعتمادات';
+        $strings['NoteDailyCreditsAwarded'] = 'Daily credits awarded';
+        $strings['NoteCreditTaxed'] = 'Credit tax applied';
         $strings['CreditsUpdatedLog'] = 'تم تحديث الاعتمادات بواسطة %s';
         $strings['ReservationCreatedLog'] = 'تم إنشاء الحجز. رقم المرجع %s';
         $strings['ReservationUpdatedLog'] = 'تم تحديث الحجز. رقم المرجع %s';
@@ -935,6 +937,7 @@ class ar extends en_us
         $strings['ReservationColors'] = 'الوان الحجوزات ';
         $strings['SearchReservations'] = 'بحث عن الحجوزات';
         $strings['ManagePayments'] = 'المدفوعات';
+        $strings['ManageCreditAutomation'] = 'Credit Automation';
         $strings['ViewCalendar'] = 'عرض التقويم';
         $strings['DataCleanup'] = 'تنظيف البيانات';
         $strings['ManageEmailTemplates'] = 'إدارة قوالب البريد الإلكتروني';

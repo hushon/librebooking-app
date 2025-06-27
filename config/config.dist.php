@@ -199,6 +199,10 @@ $conf['settings']['authentication']['captcha.on.login'] = 'false';
  */
 $conf['settings']['credits']['enabled'] = 'false';
 $conf['settings']['credits']['allow.purchase'] = 'false';
+$conf['settings']['credits']['daily.amount'] = '0';
+$conf['settings']['credits']['daily.groups'] = '';
+$conf['settings']['credits']['daily.time'] = '00:00';
+$conf['settings']['credits']['tax.percent'] = '0';
 /**
  * Slack integration
  */

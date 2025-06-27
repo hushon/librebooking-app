@@ -624,6 +624,8 @@ class du_nl extends en_gb
         $strings['TryAgain'] = 'Probeer opnieuw';
         $strings['PurchaseFailed'] = 'We had trouble processing your payment.';
         $strings['NoteCreditsPurchased'] = 'Credits purchased';
+        $strings['NoteDailyCreditsAwarded'] = 'Daily credits awarded';
+        $strings['NoteCreditTaxed'] = 'Credit tax applied';
         $strings['CreditsUpdatedLog'] = 'Credits updated by %s';
         $strings['ReservationCreatedLog'] = 'Reservation created. Reference number %s';
         $strings['ReservationUpdatedLog'] = 'Reservation updated. Reference number %s';
@@ -922,6 +924,7 @@ class du_nl extends en_gb
         $strings['ReservationColors'] = 'Reserverings kleur';
 		$strings['SearchReservations'] = 'Zoek reservering';
 		$strings['ManagePayments'] = 'Betalingen';
+        $strings['ManageCreditAutomation'] = 'Credit Automation';
 		$strings['ViewCalendar'] = 'Bekijk kalender';
 		$strings['DataCleanup'] = 'Data opschonen';
 		$strings['ManageEmailTemplates'] = 'E-mail sjablonen beheren';
