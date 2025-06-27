@@ -660,6 +660,8 @@ class ja_jp extends en_gb
         $strings['TryAgain'] = '再試行';
         $strings['PurchaseFailed'] = '支払いの処理中に問題が発生しました';
         $strings['NoteCreditsPurchased'] = '購入したクレジット';
+        $strings['NoteDailyCreditsAwarded'] = 'Daily credits awarded';
+        $strings['NoteCreditTaxed'] = 'Credit tax applied';
         $strings['CreditsUpdatedLog'] = '%s が更新したクレジット';
         $strings['ReservationCreatedLog'] = '予約が作成されました。参照番号 %s ';
         $strings['ReservationUpdatedLog'] = '予約が変更されました。参照番号 %s ';
@@ -927,6 +929,7 @@ class ja_jp extends en_gb
         $strings['SearchReservations'] = '予約の検索';
 
         $strings['ManagePayments'] = '支払';
+        $strings['ManageCreditAutomation'] = 'Credit Automation';
         $strings['ViewCalendar'] = 'カレンダーを表示';
         $strings['DataCleanup'] = 'データクリーンアップ';
         $strings['ManageEmailTemplates'] = 'メールテンプレートの管理';

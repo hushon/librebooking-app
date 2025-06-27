@@ -459,6 +459,7 @@ class pt_pt extends en_gb
         $strings['ManageEmailTemplates'] = 'Gerir modelos de email';
         $strings['ManageGroups'] = 'Grupos';
         $strings['ManagePayments'] = 'Pagamentos';
+        $strings['ManageCreditAutomation'] = 'Credit Automation';
         $strings['ManageQuotas'] = 'Quotas';
         $strings['ManageReminders'] = 'Lembretes';
         $strings['ManageReservations'] = 'Reservas';
@@ -538,6 +539,8 @@ class pt_pt extends en_gb
         $strings['NotSignedIn'] = 'Não está logado';
         $strings['Note'] = 'Nota';
         $strings['NoteCreditsPurchased'] = 'Créditos adquiridos';
+        $strings['NoteDailyCreditsAwarded'] = 'Daily credits awarded';
+        $strings['NoteCreditTaxed'] = 'Credit tax applied';
         $strings['Notes'] = 'Notas';
         $strings['NotificationPreferences'] = 'Preferências de Notificação';
         $strings['NotifyUser'] = 'Notificar utilizador';
