@@ -615,6 +615,8 @@ class de_de extends en_gb
         $strings['TryAgain'] = 'Noch einmal versuchen';
         $strings['PurchaseFailed'] = 'Wir konnten ihre Bezahlung nicht vollständig abwickeln.';
         $strings['NoteCreditsPurchased'] = 'Punkte gekauft';
+        $strings['NoteDailyCreditsAwarded'] = 'Daily credits awarded';
+        $strings['NoteCreditTaxed'] = 'Credit tax applied';
         $strings['CreditsUpdatedLog'] = 'Punkte aktualisiert durch %s';
         $strings['ReservationCreatedLog'] = 'Reservierung angelegt. Referenznummer %s';
         $strings['ReservationUpdatedLog'] = 'Reservierung aktualisiert. Referenznummer %s';
@@ -909,6 +911,7 @@ class de_de extends en_gb
         $strings['ReservationColors'] = 'Reservierungsfarben';
         $strings['SearchReservations'] = 'Reservierungen finden';
         $strings['ManagePayments'] = 'Zahlungen';
+        $strings['ManageCreditAutomation'] = 'Credit Automation';
         $strings['ViewCalendar'] = 'Kalender anschauen';
         $strings['DataCleanup'] = 'Daten aufräumen';
         $strings['ManageEmailTemplates'] = 'E-Mail Vorlagen bearbeiten';

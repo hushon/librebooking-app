@@ -627,6 +627,8 @@ class fi_fi extends en_gb
         $strings['TryAgain'] = 'Yritä Uudelleen';
         $strings['PurchaseFailed'] = 'Maksusi kanssa oli ongelmia.';
         $strings['NoteCreditsPurchased'] = 'Krediittiä ostettu';
+        $strings['NoteDailyCreditsAwarded'] = 'Daily credits awarded';
+        $strings['NoteCreditTaxed'] = 'Credit tax applied';
         $strings['CreditsUpdatedLog'] = '%s on päivittänyt Krediitit';
         $strings['ReservationCreatedLog'] = 'Varaus luotu. Varausnumero %s';
         $strings['ReservationUpdatedLog'] = 'Varaus päivitetty. Varausnumero %s';
@@ -846,6 +848,7 @@ class fi_fi extends en_gb
         $strings['ReservationColors'] = 'Varausten Värit';
         $strings['SearchReservations'] = 'Etsi Varauksia';
         $strings['ManagePayments'] = 'Maksut';
+        $strings['ManageCreditAutomation'] = 'Credit Automation';
         $strings['ViewCalendar'] = 'Katso Kalenteria';
         $strings['DataCleanup'] = 'Datan Poista';
         $strings['ManageEmailTemplates'] = 'Hallitse Sähköpostipohjia';

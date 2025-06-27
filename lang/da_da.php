@@ -649,6 +649,8 @@ class da_da extends en_gb
         $strings['TryAgain'] = 'Prøv igen';
         $strings['PurchaseFailed'] = 'Der var problemer med din betaling';
         $strings['NoteCreditsPurchased'] = 'Mønter anskaffet';
+        $strings['NoteDailyCreditsAwarded'] = 'Daily credits awarded';
+        $strings['NoteCreditTaxed'] = 'Credit tax applied';
         $strings['CreditsUpdatedLog'] = 'Mønter er opdateret med %s';
         $strings['ReservationCreatedLog'] = 'Din reservation er oprettet. Referencenummer %s';
         $strings['ReservationUpdatedLog'] = 'Din reservation er opdateret. Referencenummer %s';
@@ -930,6 +932,7 @@ class da_da extends en_gb
         $strings['ReservationColors'] = 'Reservationsfarver';
         $strings['SearchReservations'] = 'Find reservation';
         $strings['ManagePayments'] = 'Betalling';
+        $strings['ManageCreditAutomation'] = 'Credit Automation';
         $strings['ViewCalendar'] = 'Se kalender';
         $strings['DataCleanup'] = 'Fjern data';
         $strings['ManageEmailTemplates'] = 'E-mailskabeloner';

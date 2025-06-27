@@ -657,9 +657,13 @@ class en_us extends Language
         $strings['TryAgain'] = 'Try Again';
         $strings['PurchaseFailed'] = 'We had trouble processing your payment.';
         $strings['NoteCreditsPurchased'] = 'Credits purchased';
+        $strings['NoteDailyCreditsAwarded'] = 'Daily credits awarded';
+        $strings['NoteCreditTaxed'] = 'Credit tax applied';
         $strings['CreditsUpdatedLog'] = 'Credits updated by %s';
         $strings['ReservationCreatedLog'] = 'Reservation created. Reference number %s';
         $strings['ReservationUpdatedLog'] = 'Reservation updated. Reference number %s';
+        $strings['NoteDailyCreditsAwarded'] = 'Daily credits awarded';
+        $strings['NoteCreditTaxed'] = 'Credit tax applied';
         $strings['ReservationDeletedLog'] = 'Reservation deleted. Reference number %s';
         $strings['BuyMoreCredits'] = 'Buy More Credits';
         $strings['Transactions'] = 'Transactions';
@@ -952,6 +956,8 @@ class en_us extends Language
         $strings['ReservationColors'] = 'Reservation Colors';
         $strings['SearchReservations'] = 'Search Reservations';
         $strings['ManagePayments'] = 'Payments';
+        $strings['ManageCreditAutomation'] = 'Credit Automation';
+        $strings['ManageCreditAutomation'] = 'Credit Automation';
         $strings['ViewCalendar'] = 'View Calendar';
         $strings['DataCleanup'] = 'Data Cleanup';
         $strings['ManageEmailTemplates'] = 'Manage Email Templates';

@@ -658,6 +658,8 @@ class pl extends en_gb
         $strings['TryAgain'] = 'Spróbuj ponownie';
         $strings['PurchaseFailed'] = 'Wystąpił problem z przetwarzaniem Twojej płatności.';
         $strings['NoteCreditsPurchased'] = 'Zakupione żetony';
+        $strings['NoteDailyCreditsAwarded'] = 'Daily credits awarded';
+        $strings['NoteCreditTaxed'] = 'Credit tax applied';
         $strings['CreditsUpdatedLog'] = 'Żetony zaktualizowane przez %s';
         $strings['ReservationCreatedLog'] = 'Rezerwacja utworzona: Nr referencyjny: %s';
         $strings['ReservationUpdatedLog'] = 'Rezerwacja zmieniona: Nr referencyjny:%s';
@@ -953,6 +955,7 @@ class pl extends en_gb
         $strings['ReservationColors'] = 'Kolory rezerwacji';
         $strings['SearchReservations'] = 'Przeszukaj rezerwacje';
         $strings['ManagePayments'] = 'Płatności';
+        $strings['ManageCreditAutomation'] = 'Credit Automation';
         $strings['ViewCalendar'] = 'Podgląd kalendarza';
         $strings['DataCleanup'] = 'Czyszczenie danych';
         $strings['ManageEmailTemplates'] = 'Zarządzaj szablonami e-maili';
