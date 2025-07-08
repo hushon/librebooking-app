@@ -619,6 +619,8 @@ class lt extends en_gb
         $strings['TryAgain'] = 'Try Again';
         $strings['PurchaseFailed'] = 'We had trouble processing your payment.';
         $strings['NoteCreditsPurchased'] = 'Credits purchased';
+        $strings['NoteDailyCreditsAwarded'] = 'Daily credits awarded';
+        $strings['NoteCreditTaxed'] = 'Credit tax applied';
         $strings['CreditsUpdatedLog'] = 'Credits updated by %s';
         $strings['ReservationCreatedLog'] = 'Reservation created. Reference number %s';
         $strings['ReservationUpdatedLog'] = 'Reservation updated. Reference number %s';
@@ -912,6 +914,7 @@ class lt extends en_gb
         $strings['ReservationColors'] = 'Rezervacijų spalvos';
         $strings['SearchReservations'] = 'Ieškoti rezervacijų';
         $strings['ManagePayments'] = 'Payments';
+        $strings['ManageCreditAutomation'] = 'Credit Automation';
         $strings['ViewCalendar'] = 'View Calendar';
         $strings['DataCleanup'] = 'Data Cleanup';
         $strings['ManageEmailTemplates'] = 'Manage Email Templates';
