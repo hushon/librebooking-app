@@ -1,6 +1,5 @@
 <?php
 require_once(ROOT_DIR . 'Presenters/ActionPresenter.php');
-require_once(ROOT_DIR . 'Pages/Admin/ManageCreditAutomationPage.php');
 require_once(ROOT_DIR . 'lib/Config/Configurator.php');
 
 class ManageCreditAutomationActions
