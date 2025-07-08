@@ -1,4 +1,5 @@
 <?php
+
 if (!defined('ROOT_DIR')) {
     define('ROOT_DIR', dirname(__DIR__, 2) . '/');
 }
