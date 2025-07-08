@@ -957,7 +957,6 @@ class en_us extends Language
         $strings['SearchReservations'] = 'Search Reservations';
         $strings['ManagePayments'] = 'Payments';
         $strings['ManageCreditAutomation'] = 'Credit Automation';
-        $strings['ManageCreditAutomation'] = 'Credit Automation';
         $strings['ViewCalendar'] = 'View Calendar';
         $strings['DataCleanup'] = 'Data Cleanup';
         $strings['ManageEmailTemplates'] = 'Manage Email Templates';
