@@ -4,6 +4,7 @@ require_once(ROOT_DIR . 'lib/Config/Configurator.php');
 require_once(ROOT_DIR . 'Domain/Access/UserRepository.php');
 require_once(ROOT_DIR . 'lib/Database/Commands/namespace.php');
 
+
 class ManageCreditAutomationActions
 {
     public const SAVE = 'save';
@@ -33,6 +34,7 @@ class ManageCreditAutomationPresenter extends ActionPresenter
         $time = Configuration::Instance()->GetSectionKey(ConfigSection::CREDITS, ConfigKeys::CREDITS_SCHEDULE_TIME);
         $max = Configuration::Instance()->GetSectionKey(ConfigSection::CREDITS, ConfigKeys::CREDITS_MAX_BALANCE);
         $this->page->BindSettings($amount, $period, $time, $max);
+
     }
 
     public function Save()
@@ -71,4 +73,5 @@ class ManageCreditAutomationPresenter extends ActionPresenter
             }
         }
     }
+
 }

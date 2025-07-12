@@ -11,6 +11,7 @@ interface IManageCreditAutomationPage extends IActionPage
     public function GetMaxCredit();
     public function GetImmediateAmount();
     public function BindSettings($amount, $period, $time, $max);
+
 }
 
 class ManageCreditAutomationPage extends ActionPage implements IManageCreditAutomationPage
@@ -21,6 +22,7 @@ class ManageCreditAutomationPage extends ActionPage implements IManageCreditAuto
     {
         parent::__construct('ManageCreditAutomation', 1);
         $this->presenter = new ManageCreditAutomationPresenter($this, new Configurator());
+
     }
 
     public function ProcessPageLoad()

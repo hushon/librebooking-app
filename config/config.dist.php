@@ -208,6 +208,7 @@ $conf['settings']['credits']['schedule.period'] = '1';
 $conf['settings']['credits']['schedule.time'] = '00:00';
 $conf['settings']['credits']['max.balance'] = '0';
 $conf['settings']['credits']['schedule.last'] = '';
+
 /**
  * Slack integration
  */
