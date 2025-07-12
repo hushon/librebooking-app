@@ -25,6 +25,11 @@ class es extends en_gb
         $strings['Update'] = 'Actualizar';
         $strings['Cancel'] = 'Cancelar';
         $strings['Add'] = 'Agregar';
+        $strings['Save'] = 'Save';
+        $strings['Time'] = 'Time';
+        $strings['Tax'] = 'Tax';
+        $strings['Scheduled'] = 'Scheduled';
+        $strings['PeriodDays'] = 'Period (days)';
         $strings['Name'] = 'Nombre';
         $strings['Yes'] = 'Sí';
         $strings['No'] = 'No';
@@ -620,6 +625,8 @@ class es extends en_gb
         $strings['TryAgain'] = 'Intentar de nuevo';
         $strings['PurchaseFailed'] = 'Hemos tenido problemas procesando su pago.';
         $strings['NoteCreditsPurchased'] = 'Créditos comprados';
+        $strings['NoteDailyCreditsAwarded'] = 'Daily credits awarded';
+        $strings['NoteCreditTaxed'] = 'Credit tax applied';
         $strings['CreditsUpdatedLog'] = 'Créditos actualizados por %s';
         $strings['ReservationCreatedLog'] = 'Reserva creada. Número de referencia %s';
         $strings['ReservationUpdatedLog'] = 'Reserva actualizada. Número de referencia %s';
@@ -915,6 +922,7 @@ class es extends en_gb
         $strings['ReservationColors'] = 'Colores de las reservas';
         $strings['SearchReservations'] = 'Buscar Reservas';
         $strings['ManagePayments'] = 'Pagos';
+        $strings['ManageCreditAutomation'] = 'Credit Automation';
         $strings['ViewCalendar'] = 'Ver Calendario';
         $strings['DataCleanup'] = 'Limpiar Datos';
         $strings['ManageEmailTemplates'] = 'Administrar Plantillas de Correo Electrónico';

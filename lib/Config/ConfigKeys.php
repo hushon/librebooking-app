@@ -9,6 +9,15 @@ class ConfigKeys
     public const ALLOW_REGISTRATION = 'allow.self.registration';
     public const CREDITS_ENABLED = 'enabled';
     public const CREDITS_ALLOW_PURCHASE = 'allow.purchase';
+    public const CREDITS_DAILY_AMOUNT = 'daily.amount';
+    public const CREDITS_DAILY_GROUPS = 'daily.groups';
+    public const CREDITS_DAILY_TIME = 'daily.time';
+    public const CREDITS_TAX_PERCENT = 'tax.percent';
+    public const CREDITS_SCHEDULE_AMOUNT = 'schedule.amount';
+    public const CREDITS_SCHEDULE_PERIOD = 'schedule.period';
+    public const CREDITS_SCHEDULE_TIME = 'schedule.time';
+    public const CREDITS_MAX_BALANCE = 'max.balance';
+    public const CREDITS_LAST_RUN = 'schedule.last';
     public const CSS_EXTENSION_FILE = 'css.extension.file';
     public const CSS_THEME = 'css.theme';
     public const DEFAULT_HOMEPAGE = 'default.homepage';

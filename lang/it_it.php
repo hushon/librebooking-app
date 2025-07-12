@@ -61,6 +61,11 @@ class it_it extends en_us
         $strings['Update'] = 'Aggiorna';
         $strings['Cancel'] = 'Annulla';
         $strings['Add'] = 'Aggiungi';
+        $strings['Save'] = 'Save';
+        $strings['Time'] = 'Time';
+        $strings['Tax'] = 'Tax';
+        $strings['Scheduled'] = 'Scheduled';
+        $strings['PeriodDays'] = 'Period (days)';
         $strings['Name'] = 'Nome';
         $strings['Yes'] = 'S&igrave;';
         $strings['No'] = 'No';
@@ -652,6 +657,8 @@ class it_it extends en_us
         $strings['TryAgain'] = 'Riprova';
         $strings['PurchaseFailed'] = 'Abbiamo riscontrato problemi durante l&apos;elaborazione del pagamento.';
         $strings['NoteCreditsPurchased'] = 'Crediti acquistati';
+        $strings['NoteDailyCreditsAwarded'] = 'Daily credits awarded';
+        $strings['NoteCreditTaxed'] = 'Credit tax applied';
         $strings['CreditsUpdatedLog'] = 'Crediti aggiornati da %s';
         $strings['ReservationCreatedLog'] = 'Prenotazione creata. Numero Riferimento %s';
         $strings['ReservationUpdatedLog'] = 'Prenotazione aggiornata. Numero Riferimento %s';
@@ -948,6 +955,7 @@ class it_it extends en_us
         $strings['ReservationColors'] = 'Colori delle prenotazioni';
         $strings['SearchReservations'] = 'Cerca Prenotazioni';
         $strings['ManagePayments'] = 'Pagamenti';
+        $strings['ManageCreditAutomation'] = 'Credit Automation';
         $strings['ViewCalendar'] = 'Visualizza calendario';
         $strings['DataCleanup'] = 'Pulizia dei dati';
         $strings['ManageEmailTemplates'] = 'Gestisci template email';

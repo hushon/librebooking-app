@@ -246,6 +246,7 @@
                                                     href="{$Path}admin/manage_payments.php">{translate key="ManagePayments"}</a>
                                             </li>
                                         {/if}
+                                            <li id="navManageCreditAutomation"><a class="dropdown-item" href="{$Path}admin/manage_credit_automation.php">{translate key="ManageCreditAutomation"}</a></li>
                                         <li id="navManageAttributes"><a class="dropdown-item"
                                                 href="{$Path}admin/manage_attributes.php">{translate key="CustomAttributes"}</a>
                                         </li>

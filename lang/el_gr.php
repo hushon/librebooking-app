@@ -63,6 +63,11 @@ class el_gr extends en_gb
         $strings['Update'] = 'Ενημέρωση';
         $strings['Cancel'] = 'Άκυρο';
         $strings['Add'] = 'Προσθήκη';
+        $strings['Save'] = 'Save';
+        $strings['Time'] = 'Time';
+        $strings['Tax'] = 'Tax';
+        $strings['Scheduled'] = 'Scheduled';
+        $strings['PeriodDays'] = 'Period (days)';
         $strings['Name'] = 'Όνομα';
         $strings['Yes'] = 'Ναι';
         $strings['No'] = 'Όχι';
@@ -654,6 +659,8 @@ class el_gr extends en_gb
         $strings['TryAgain'] = 'Δοκιμάστε πάλι';
         $strings['PurchaseFailed'] = 'Πρόβλημα κατά την επεξεργασία της πληρωμής σας.';
         $strings['NoteCreditsPurchased'] = 'Τα credits αγοράστηκαν';
+        $strings['NoteDailyCreditsAwarded'] = 'Daily credits awarded';
+        $strings['NoteCreditTaxed'] = 'Credit tax applied';
         $strings['CreditsUpdatedLog'] = 'Τα credits τροποποιήθηκαν από %s';
         $strings['ReservationCreatedLog'] = 'Η κράτηση δημιουργήθηκε. Αριθμός αναφοράς %s';
         $strings['ReservationUpdatedLog'] = 'Η κράτηση τροποποιήθηκε. Αριθμός αναφοράς %s';
@@ -947,6 +954,7 @@ class el_gr extends en_gb
         $strings['ReservationColors'] = 'Χρώματα Κρατήσεων';
         $strings['SearchReservations'] = 'Αναζήτηση στις Κρατήσεις';
         $strings['ManagePayments'] = 'Πληρωμές';
+        $strings['ManageCreditAutomation'] = 'Credit Automation';
         $strings['ViewCalendar'] = 'Εμφάνιση Ημερολογίου';
         $strings['DataCleanup'] = 'Εκκαθάριση Δεδομένων';
         $strings['ManageEmailTemplates'] = 'Διαχείριση Προτύπων Email';
