@@ -25,6 +25,9 @@ class es extends en_gb
         $strings['Update'] = 'Actualizar';
         $strings['Cancel'] = 'Cancelar';
         $strings['Add'] = 'Agregar';
+        $strings['Save'] = 'Save';
+        $strings['Time'] = 'Time';
+        $strings['Tax'] = 'Tax';
         $strings['Name'] = 'Nombre';
         $strings['Yes'] = 'Sí';
         $strings['No'] = 'No';

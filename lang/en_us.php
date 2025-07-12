@@ -62,6 +62,9 @@ class en_us extends Language
         $strings['Update'] = 'Update';
         $strings['Cancel'] = 'Cancel';
         $strings['Add'] = 'Add';
+        $strings['Save'] = 'Save';
+        $strings['Time'] = 'Time';
+        $strings['Tax'] = 'Tax';
         $strings['Name'] = 'Name';
         $strings['Yes'] = 'Yes';
         $strings['No'] = 'No';

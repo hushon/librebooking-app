@@ -28,6 +28,9 @@ class lt extends en_gb
         $strings['Update'] = 'Atnaujinti';
         $strings['Cancel'] = 'Atšaukti';
         $strings['Add'] = 'Pridėti';
+        $strings['Save'] = 'Save';
+        $strings['Time'] = 'Time';
+        $strings['Tax'] = 'Tax';
         $strings['Name'] = 'Pavadinimas';
         $strings['Yes'] = 'Taip';
         $strings['No'] = 'Ne';

@@ -25,6 +25,9 @@ class du_nl extends en_gb
         $strings['Update'] = 'Pas aan';
         $strings['Cancel'] = 'Annuleer';
         $strings['Add'] = 'Voeg toe';
+        $strings['Save'] = 'Save';
+        $strings['Time'] = 'Time';
+        $strings['Tax'] = 'Tax';
         $strings['Name'] = 'Naam';
         $strings['Yes'] = 'Ja';
         $strings['No'] = 'Nee';

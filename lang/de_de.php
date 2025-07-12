@@ -23,6 +23,9 @@ class de_de extends en_gb
         $strings['Update'] = 'Update';
         $strings['Cancel'] = 'Abbrechen';
         $strings['Add'] = 'Hinzufügen';
+        $strings['Save'] = 'Save';
+        $strings['Time'] = 'Time';
+        $strings['Tax'] = 'Tax';
         $strings['Name'] = 'Name';
         $strings['Yes'] = 'Ja';
         $strings['No'] = 'Nein';

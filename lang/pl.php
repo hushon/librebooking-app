@@ -67,6 +67,9 @@ class pl extends en_gb
         $strings['Update'] = 'Aktualizuj';
         $strings['Cancel'] = 'Anuluj';
         $strings['Add'] = 'Dodaj';
+        $strings['Save'] = 'Save';
+        $strings['Time'] = 'Time';
+        $strings['Tax'] = 'Tax';
         $strings['Name'] = 'Nazwa';
         $strings['Yes'] = 'Tak';
         $strings['No'] = 'Nie';

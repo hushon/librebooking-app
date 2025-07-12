@@ -63,6 +63,9 @@ class ar extends en_us
         $strings['Update'] = 'تحديث';
         $strings['Cancel'] = 'إالغاء';
         $strings['Add'] = 'إضافة';
+        $strings['Save'] = 'Save';
+        $strings['Time'] = 'Time';
+        $strings['Tax'] = 'Tax';
         $strings['Name'] = 'الاسم';
         $strings['Yes'] = 'نعم';
         $strings['No'] = 'لا';

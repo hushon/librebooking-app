@@ -25,6 +25,9 @@ class fr_fr extends en_gb
         $strings['Update'] = 'Enregistrer';
         $strings['Cancel'] = 'Annuler';
         $strings['Add'] = 'Ajouter';
+        $strings['Save'] = 'Save';
+        $strings['Time'] = 'Time';
+        $strings['Tax'] = 'Tax';
         $strings['Name'] = 'Nom';
         $strings['Yes'] = 'Oui';
         $strings['No'] = 'Non';

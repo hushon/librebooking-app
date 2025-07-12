@@ -61,6 +61,9 @@ class it_it extends en_us
         $strings['Update'] = 'Aggiorna';
         $strings['Cancel'] = 'Annulla';
         $strings['Add'] = 'Aggiungi';
+        $strings['Save'] = 'Save';
+        $strings['Time'] = 'Time';
+        $strings['Tax'] = 'Tax';
         $strings['Name'] = 'Nome';
         $strings['Yes'] = 'S&igrave;';
         $strings['No'] = 'No';

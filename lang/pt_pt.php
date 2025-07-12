@@ -68,6 +68,9 @@ class pt_pt extends en_gb
         $strings['Active'] = 'Ativo';
         $strings['AdHocMeeting'] = 'Reunião ad hoc';
         $strings['Add'] = 'Adicionar';
+        $strings['Save'] = 'Save';
+        $strings['Time'] = 'Time';
+        $strings['Tax'] = 'Tax';
         $strings['AddAccessories'] = 'Adicionar acessórios';
         $strings['AddAccessory'] = 'Adicionar acessório';
         $strings['AddAnnouncement'] = 'Adicionar anúncio';

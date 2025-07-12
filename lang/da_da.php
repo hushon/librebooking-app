@@ -58,6 +58,9 @@ class da_da extends en_gb
         $strings['Update'] = 'Opdatér';
         $strings['Cancel'] = 'Annuller';
         $strings['Add'] = 'Tilføj';
+        $strings['Save'] = 'Save';
+        $strings['Time'] = 'Time';
+        $strings['Tax'] = 'Tax';
         $strings['Name'] = 'Navn';
         $strings['Yes'] = 'Ja';
         $strings['No'] = 'Nej';

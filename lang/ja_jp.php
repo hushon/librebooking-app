@@ -63,6 +63,9 @@ class ja_jp extends en_gb
         $strings['Update'] = '更新';
         $strings['Cancel'] = 'キャンセル';
         $strings['Add'] = '追加';
+        $strings['Save'] = 'Save';
+        $strings['Time'] = 'Time';
+        $strings['Tax'] = 'Tax';
         $strings['Name'] = '名前';
         $strings['Yes'] = 'はい';
         $strings['No'] = 'いいえ';

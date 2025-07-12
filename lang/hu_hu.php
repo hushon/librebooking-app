@@ -57,6 +57,9 @@ class hu_hu extends en_us
         $strings['Update'] = 'Frisstés';
         $strings['Cancel'] = 'Mégse';
         $strings['Add'] = 'Hozzáad';
+        $strings['Save'] = 'Save';
+        $strings['Time'] = 'Time';
+        $strings['Tax'] = 'Tax';
         $strings['Name'] = 'Név';
         $strings['Yes'] = 'Igen';
         $strings['No'] = 'Nem';

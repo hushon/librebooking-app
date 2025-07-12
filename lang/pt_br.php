@@ -28,6 +28,9 @@ class pt_br extends en_gb
         $strings['Update'] = 'Atualizar';
         $strings['Cancel'] = 'Cancelar';
         $strings['Add'] = 'Adicionar';
+        $strings['Save'] = 'Save';
+        $strings['Time'] = 'Time';
+        $strings['Tax'] = 'Tax';
         $strings['Name'] = 'Nome';
         $strings['Yes'] = 'Sim';
         $strings['No'] = 'Não';

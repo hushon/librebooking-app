@@ -63,6 +63,9 @@ class el_gr extends en_gb
         $strings['Update'] = 'Ενημέρωση';
         $strings['Cancel'] = 'Άκυρο';
         $strings['Add'] = 'Προσθήκη';
+        $strings['Save'] = 'Save';
+        $strings['Time'] = 'Time';
+        $strings['Tax'] = 'Tax';
         $strings['Name'] = 'Όνομα';
         $strings['Yes'] = 'Ναι';
         $strings['No'] = 'Όχι';

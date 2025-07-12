@@ -23,6 +23,9 @@ class fi_fi extends en_gb
         $strings['Update'] = 'Päivitä';
         $strings['Cancel'] = 'Peruuta';
         $strings['Add'] = 'Lisää';
+        $strings['Save'] = 'Save';
+        $strings['Time'] = 'Time';
+        $strings['Tax'] = 'Tax';
         $strings['Name'] = 'Nimi';
         $strings['Yes'] = 'Kyllä';
         $strings['No'] = 'Ei';
