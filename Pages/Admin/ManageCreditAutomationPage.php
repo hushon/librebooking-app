@@ -30,6 +30,7 @@ class ManageCreditAutomationPage extends ActionPage implements IManageCreditAuto
         $this->presenter->PageLoad();
         // template lives under tpl/Admin, include folder name so Smarty resolves correctly
         $this->Display('Admin/manage_credit_automation.tpl');
+
     }
     public function ProcessDataRequest($dataRequest){}
 
