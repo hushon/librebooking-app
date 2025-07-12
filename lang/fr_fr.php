@@ -25,6 +25,9 @@ class fr_fr extends en_gb
         $strings['Update'] = 'Enregistrer';
         $strings['Cancel'] = 'Annuler';
         $strings['Add'] = 'Ajouter';
+        $strings['Save'] = 'Save';
+        $strings['Time'] = 'Time';
+        $strings['Tax'] = 'Tax';
         $strings['Name'] = 'Nom';
         $strings['Yes'] = 'Oui';
         $strings['No'] = 'Non';
@@ -619,6 +622,8 @@ class fr_fr extends en_gb
         $strings['TryAgain'] = 'Essayer à nouveau';
         $strings['PurchaseFailed'] = 'Nous avons eu un probème lors du traitement de votre paiement.';
         $strings['NoteCreditsPurchased'] = 'Crédits achetés';
+        $strings['NoteDailyCreditsAwarded'] = 'Daily credits awarded';
+        $strings['NoteCreditTaxed'] = 'Credit tax applied';
         $strings['CreditsUpdatedLog'] = 'Crédits achetés par %s';
         $strings['ReservationCreatedLog'] = 'Réservation créée. Numéro de reference %s';
         $strings['ReservationUpdatedLog'] = 'Réservation modifiée. Numéro de reference %s';
@@ -912,6 +917,7 @@ class fr_fr extends en_gb
         $strings['ReservationColors'] = 'Couleurs des Réservations';
         $strings['SearchReservations'] = 'Rechercher des Réservations';
         $strings['ManagePayments'] = 'Paiements';
+        $strings['ManageCreditAutomation'] = 'Credit Automation';
         $strings['ViewCalendar'] = 'Voir le Calendrier';
         $strings['DataCleanup'] = 'Nettoyage des données';
         $strings['ManageEmailTemplates'] = 'Gérer les Modèles de Email';

@@ -57,6 +57,9 @@ class hu_hu extends en_us
         $strings['Update'] = 'Frisstés';
         $strings['Cancel'] = 'Mégse';
         $strings['Add'] = 'Hozzáad';
+        $strings['Save'] = 'Save';
+        $strings['Time'] = 'Time';
+        $strings['Tax'] = 'Tax';
         $strings['Name'] = 'Név';
         $strings['Yes'] = 'Igen';
         $strings['No'] = 'Nem';
@@ -648,6 +651,8 @@ class hu_hu extends en_us
         $strings['TryAgain'] = 'Újra próbál';
         $strings['PurchaseFailed'] = 'Probléma a fizetés közben.';
         $strings['NoteCreditsPurchased'] = 'Egység megvásárolva';
+        $strings['NoteDailyCreditsAwarded'] = 'Daily credits awarded';
+        $strings['NoteCreditTaxed'] = 'Credit tax applied';
         $strings['CreditsUpdatedLog'] = 'Egység frissítve %s által';
         $strings['ReservationCreatedLog'] = 'Foglalás létrehozva. Referenciaszám %s';
         $strings['ReservationUpdatedLog'] = 'Foglalás frissítve. Referenciaszám %s';
@@ -908,6 +913,7 @@ class hu_hu extends en_us
         $strings['ReservationColors'] = 'Foglalások színei';
         $strings['SearchReservations'] = 'Foglalás keresése';
         $strings['ManagePayments'] = 'Kifizetések';
+        $strings['ManageCreditAutomation'] = 'Credit Automation';
         $strings['ViewCalendar'] = 'Naptár megtekintése';
         $strings['DataCleanup'] = 'Adat törlés';
         $strings['ManageEmailTemplates'] = 'E-mail sablonok kezelése';
