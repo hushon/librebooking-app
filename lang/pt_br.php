@@ -31,6 +31,8 @@ class pt_br extends en_gb
         $strings['Save'] = 'Save';
         $strings['Time'] = 'Time';
         $strings['Tax'] = 'Tax';
+        $strings['Scheduled'] = 'Scheduled';
+        $strings['PeriodDays'] = 'Period (days)';
         $strings['Name'] = 'Nome';
         $strings['Yes'] = 'Sim';
         $strings['No'] = 'Não';

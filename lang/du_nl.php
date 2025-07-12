@@ -28,6 +28,8 @@ class du_nl extends en_gb
         $strings['Save'] = 'Save';
         $strings['Time'] = 'Time';
         $strings['Tax'] = 'Tax';
+        $strings['Scheduled'] = 'Scheduled';
+        $strings['PeriodDays'] = 'Period (days)';
         $strings['Name'] = 'Naam';
         $strings['Yes'] = 'Ja';
         $strings['No'] = 'Nee';

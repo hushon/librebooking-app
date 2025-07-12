@@ -28,6 +28,8 @@ class es extends en_gb
         $strings['Save'] = 'Save';
         $strings['Time'] = 'Time';
         $strings['Tax'] = 'Tax';
+        $strings['Scheduled'] = 'Scheduled';
+        $strings['PeriodDays'] = 'Period (days)';
         $strings['Name'] = 'Nombre';
         $strings['Yes'] = 'Sí';
         $strings['No'] = 'No';

@@ -66,6 +66,8 @@ class el_gr extends en_gb
         $strings['Save'] = 'Save';
         $strings['Time'] = 'Time';
         $strings['Tax'] = 'Tax';
+        $strings['Scheduled'] = 'Scheduled';
+        $strings['PeriodDays'] = 'Period (days)';
         $strings['Name'] = 'Όνομα';
         $strings['Yes'] = 'Ναι';
         $strings['No'] = 'Όχι';

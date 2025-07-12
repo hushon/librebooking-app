@@ -71,6 +71,8 @@ class pt_pt extends en_gb
         $strings['Save'] = 'Save';
         $strings['Time'] = 'Time';
         $strings['Tax'] = 'Tax';
+        $strings['Scheduled'] = 'Scheduled';
+        $strings['PeriodDays'] = 'Period (days)';
         $strings['AddAccessories'] = 'Adicionar acessórios';
         $strings['AddAccessory'] = 'Adicionar acessório';
         $strings['AddAnnouncement'] = 'Adicionar anúncio';

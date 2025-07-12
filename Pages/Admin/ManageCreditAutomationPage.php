@@ -2,17 +2,16 @@
 
 require_once(ROOT_DIR . 'Pages/Admin/AdminPage.php');
 require_once(ROOT_DIR . 'Presenters/Admin/ManageCreditAutomationPresenter.php');
-require_once(ROOT_DIR . 'Domain/Access/GroupRepository.php');
-require_once(ROOT_DIR . 'lib/Config/Configuration.php');
 
 interface IManageCreditAutomationPage extends IActionPage
 {
-    public function GetDailyAmount();
-    public function GetDailyTime();
-    public function GetTaxPercent();
-    public function GetGroups();
-    public function BindGroups($groups, $selected);
-    public function BindSettings($amount, $time, $tax);
+    public function GetScheduleAmount();
+    public function GetSchedulePeriod();
+    public function GetScheduleTime();
+    public function GetMaxCredit();
+    public function GetImmediateAmount();
+    public function BindSettings($amount, $period, $time, $max);
+
 }
 
 class ManageCreditAutomationPage extends ActionPage implements IManageCreditAutomationPage
@@ -22,16 +21,16 @@ class ManageCreditAutomationPage extends ActionPage implements IManageCreditAuto
     public function __construct()
     {
         parent::__construct('ManageCreditAutomation', 1);
-        $this->presenter = new ManageCreditAutomationPresenter($this, new GroupRepository(), new Configurator());
+        $this->presenter = new ManageCreditAutomationPresenter($this, new Configurator());
+
     }
 
     public function ProcessPageLoad()
     {
         $this->presenter->PageLoad();
-        // template lives under tpl/Admin, include folder name so Smarty resolves correctly
         $this->Display('Admin/manage_credit_automation.tpl');
-
     }
+
     public function ProcessDataRequest($dataRequest){}
 
     public function ProcessAction()
@@ -39,36 +38,36 @@ class ManageCreditAutomationPage extends ActionPage implements IManageCreditAuto
         $this->presenter->ProcessAction();
     }
 
-    public function GetDailyAmount()
+    public function GetScheduleAmount()
     {
-        return $this->GetForm('dailyAmount');
+        return $this->GetForm('scheduleAmount');
     }
 
-    public function GetDailyTime()
+    public function GetSchedulePeriod()
     {
-        return $this->GetForm('dailyTime');
+        return $this->GetForm('schedulePeriod');
     }
 
-    public function GetTaxPercent()
+    public function GetScheduleTime()
     {
-        return $this->GetForm('taxPercent');
+        return $this->GetForm('scheduleTime');
     }
 
-    public function GetGroups()
+    public function GetMaxCredit()
     {
-        return $this->GetForm('groups');
+        return $this->GetForm('maxCredit');
     }
 
-    public function BindGroups($groups, $selected)
+    public function GetImmediateAmount()
     {
-        $this->Set('Groups', $groups);
-        $this->Set('SelectedGroups', $selected);
+        return $this->GetForm('immediateAmount');
     }
 
-    public function BindSettings($amount, $time, $tax)
+    public function BindSettings($amount, $period, $time, $max)
     {
-        $this->Set('DailyAmount', $amount);
-        $this->Set('DailyTime', $time);
-        $this->Set('TaxPercent', $tax);
+        $this->Set('ScheduleAmount', $amount);
+        $this->Set('SchedulePeriod', $period);
+        $this->Set('ScheduleTime', $time);
+        $this->Set('MaxCredit', $max);
     }
 }

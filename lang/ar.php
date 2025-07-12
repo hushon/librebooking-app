@@ -66,6 +66,8 @@ class ar extends en_us
         $strings['Save'] = 'Save';
         $strings['Time'] = 'Time';
         $strings['Tax'] = 'Tax';
+        $strings['Scheduled'] = 'Scheduled';
+        $strings['PeriodDays'] = 'Period (days)';
         $strings['Name'] = 'الاسم';
         $strings['Yes'] = 'نعم';
         $strings['No'] = 'لا';

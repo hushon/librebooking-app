@@ -64,6 +64,8 @@ class it_it extends en_us
         $strings['Save'] = 'Save';
         $strings['Time'] = 'Time';
         $strings['Tax'] = 'Tax';
+        $strings['Scheduled'] = 'Scheduled';
+        $strings['PeriodDays'] = 'Period (days)';
         $strings['Name'] = 'Nome';
         $strings['Yes'] = 'S&igrave;';
         $strings['No'] = 'No';

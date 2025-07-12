@@ -65,6 +65,8 @@ class en_us extends Language
         $strings['Save'] = 'Save';
         $strings['Time'] = 'Time';
         $strings['Tax'] = 'Tax';
+        $strings['Scheduled'] = 'Scheduled';
+        $strings['PeriodDays'] = 'Period (days)';
         $strings['Name'] = 'Name';
         $strings['Yes'] = 'Yes';
         $strings['No'] = 'No';

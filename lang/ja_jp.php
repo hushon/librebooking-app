@@ -66,6 +66,8 @@ class ja_jp extends en_gb
         $strings['Save'] = 'Save';
         $strings['Time'] = 'Time';
         $strings['Tax'] = 'Tax';
+        $strings['Scheduled'] = 'Scheduled';
+        $strings['PeriodDays'] = 'Period (days)';
         $strings['Name'] = '名前';
         $strings['Yes'] = 'はい';
         $strings['No'] = 'いいえ';

@@ -199,6 +199,11 @@ $conf['settings']['credits']['daily.amount'] = '0';
 $conf['settings']['credits']['daily.groups'] = '';
 $conf['settings']['credits']['daily.time'] = '00:00';
 $conf['settings']['credits']['tax.percent'] = '0';
+$conf['settings']['credits']['schedule.amount'] = '0';
+$conf['settings']['credits']['schedule.period'] = '1';
+$conf['settings']['credits']['schedule.time'] = '00:00';
+$conf['settings']['credits']['max.balance'] = '0';
+$conf['settings']['credits']['schedule.last'] = '';
 /**
  * Slack integration
  */

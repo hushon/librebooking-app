@@ -61,6 +61,8 @@ class da_da extends en_gb
         $strings['Save'] = 'Save';
         $strings['Time'] = 'Time';
         $strings['Tax'] = 'Tax';
+        $strings['Scheduled'] = 'Scheduled';
+        $strings['PeriodDays'] = 'Period (days)';
         $strings['Name'] = 'Navn';
         $strings['Yes'] = 'Ja';
         $strings['No'] = 'Nej';
